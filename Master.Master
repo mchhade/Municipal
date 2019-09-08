@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="Municipal.Master" %>
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="toolbar.css" />
+        <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        
+
+    </asp:ContentPlaceHolder>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+        }
+    </script>
+        </head>  
+<body>
+    <form id="form1" runat="server">
+       
+            <ul>
+                <li><a href="#">Call us</a></li>
+                <li><a href="www.facebook.com"><img src="Images/facebook.jpg" class="icon" /></a></li>
+                <li><a href="www.facebook.com"><img src="Images/twitter.png" class="icon" /></a></li>
+                <li><asp:Button runat="server" OnClick="btnClick"/></li>
+                <asp:Label runat="server" Text="The Mayor of Beirut" Font-Italic="True" Font-Bold="True" CssClass="txt" Font-Size="Large" ForeColor="#333333" Font-Names="Arial"></asp:Label>
+               <asp:Label runat="server" ID="date" ></asp:Label>
+                
+            </ul>
+        <div class="myform" id="myform">
+            <table>
+            <tr><td><asp:Label runat="server" Text="Username" Visible="false"  ID="labeluser" ForeColor="White"></asp:Label></td></tr>
+            <tr><td><asp:TextBox runat="server" ID="username" Visible="false"></asp:TextBox></td>
+            <tr><td><asp:Label runat="server" Text="Password" Visible="false" ID="labelpassword" ForeColor="White"></asp:Label></td>
+            <tr><td><asp:TextBox runat="server" ID="password" Visible="False" TextMode="Password"></asp:TextBox></td></tr>
+                </table>
+            <asp:Button runat="server" Text="Login" OnClick="loginClick" ID="btnlogin" Visible="false"/>
+        </div>
+            <ul>
+  <li><a href="Home.aspx">Home</a></li>
+<li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Mayor</a>
+    <div class="dropdown-content">
+      <a href="CV.aspx">CV</a>
+      <a href="photo.html">Official photo</a></div></li>
+  <li class="dropdown" style="height: 20px">
+    <a href="javascript:void(0)" class="dropbtn">Women</a>
+        <div class="dropdown-content">
+      <a href="Activity.aspx">Activity</a></div></li>
+              <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">The Mayor</a>
+    <div class="dropdown-content">
+      <a href="Former.aspx">Former Mayor</a>
+      <a href="Authority.aspx">ِAUTHORITY</a>
+      
+    </div></li>
+    <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Information</a>
+    <div class="dropdown-content">
+      <a href="Meeting.aspx">Meeting</a>
+      <a href="Visiting.aspx">ِVisiting</a>
+        <a href="Speech.aspx">Speech</a>
+      </div></li>
+                <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Future</a>
+    <div class="dropdown-content">
+      <a href="Plan.aspx">Plan</a>
+      
+      </div></li>
+                <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Paper</a>
+    <div class="dropdown-content">
+      <a href="Publisher.aspx">Permit Publish</a>
+      
+                <li>
+                  <div id="google_translate_element"></div>
+                </li>
+</ul>
+            
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+       
+    </form>
+     
+</body>
+</html>

@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MunicipalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="activity">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="text" />
+          <Property Name="description_activity" Type="text" />
+          <Property Name="date_activity" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="education">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="year_education" Type="int" Nullable="false" />
+          <Property Name="description_education" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="formmer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_former" Type="varchar" MaxLength="50" />
+          <Property Name="from_year" Type="int" />
+          <Property Name="to_year" Type="int" />
+        </EntityType>
+        <EntityType Name="meeting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="text" />
+          <Property Name="description_meeting" Type="text" />
+          <Property Name="date_meeting" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="news">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="text" />
+          <Property Name="description_news" Type="text" />
+          <Property Name="date_news" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="professionell">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="year_professionel" Type="int" Nullable="false" />
+          <Property Name="description_professionel" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="publisher">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="first_name" Type="text" Nullable="false" />
+          <Property Name="last_name" Type="text" Nullable="false" />
+          <Property Name="from_date" Type="date" />
+          <Property Name="to_dates" Type="date" />
+          <Property Name="number" Type="int" />
+          <Property Name="type_pub" Type="text" />
+          <Property Name="limit" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="speech">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="text" />
+          <Property Name="description_speech" Type="text" />
+          <Property Name="date_speech" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="visiting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="text" />
+          <Property Name="description_visiting" Type="text" />
+          <Property Name="date_visiting" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityContainer Name="MunicipalModelStoreContainer">
+          <EntitySet Name="activity" EntityType="Self.activity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="education" EntityType="Self.education" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="formmer" EntityType="Self.formmer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="meeting" EntityType="Self.meeting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="news" EntityType="Self.news" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="professionell" EntityType="Self.professionell" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="publisher" EntityType="Self.publisher" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="speech" EntityType="Self.speech" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="visiting" EntityType="Self.visiting" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MunicipalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="activity">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="description_activity" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="date_activity" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="education">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="year_education" Type="Int32" Nullable="false" />
+          <Property Name="description_education" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="formmer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_former" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="from_year" Type="Int32" />
+          <Property Name="to_year" Type="Int32" />
+        </EntityType>
+        <EntityType Name="meeting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="description_meeting" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="date_meeting" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="news">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="description_news" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="date_news" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="professionell">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="year_professionel" Type="Int32" Nullable="false" />
+          <Property Name="description_professionel" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="speech">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="description_speech" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="date_speech" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="visiting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="description_visiting" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="date_visiting" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="MunicipalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="activities" EntityType="Self.activity" />
+          <EntitySet Name="educations" EntityType="Self.education" />
+          <EntitySet Name="formmers" EntityType="Self.formmer" />
+          <EntitySet Name="meetings" EntityType="Self.meeting" />
+          <EntitySet Name="news" EntityType="Self.news" />
+          <EntitySet Name="professionells" EntityType="Self.professionell" />
+          <EntitySet Name="speeches" EntityType="Self.speech" />
+          <EntitySet Name="visitings" EntityType="Self.visiting" />
+          <EntitySet Name="publishers" EntityType="MunicipalModel.publisher" />
+        </EntityContainer>
+        <EntityType Name="publisher">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="first_name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="last_name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="from_date" Type="DateTime" Precision="0" />
+          <Property Name="to_dates" Type="DateTime" Precision="0" />
+          <Property Name="number" Type="Int32" />
+          <Property Name="type_pub" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="limit" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MunicipalModelStoreContainer" CdmEntityContainer="MunicipalEntities">
+          <EntitySetMapping Name="activities">
+            <EntityTypeMapping TypeName="MunicipalModel.activity">
+              <MappingFragment StoreEntitySet="activity">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="description_activity" ColumnName="description_activity" />
+                <ScalarProperty Name="date_activity" ColumnName="date_activity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="educations">
+            <EntityTypeMapping TypeName="MunicipalModel.education">
+              <MappingFragment StoreEntitySet="education">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="year_education" ColumnName="year_education" />
+                <ScalarProperty Name="description_education" ColumnName="description_education" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="formmers">
+            <EntityTypeMapping TypeName="MunicipalModel.formmer">
+              <MappingFragment StoreEntitySet="formmer">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name_former" ColumnName="name_former" />
+                <ScalarProperty Name="from_year" ColumnName="from_year" />
+                <ScalarProperty Name="to_year" ColumnName="to_year" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="meetings">
+            <EntityTypeMapping TypeName="MunicipalModel.meeting">
+              <MappingFragment StoreEntitySet="meeting">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="description_meeting" ColumnName="description_meeting" />
+                <ScalarProperty Name="date_meeting" ColumnName="date_meeting" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="news">
+            <EntityTypeMapping TypeName="MunicipalModel.news">
+              <MappingFragment StoreEntitySet="news">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="description_news" ColumnName="description_news" />
+                <ScalarProperty Name="date_news" ColumnName="date_news" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="professionells">
+            <EntityTypeMapping TypeName="MunicipalModel.professionell">
+              <MappingFragment StoreEntitySet="professionell">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="year_professionel" ColumnName="year_professionel" />
+                <ScalarProperty Name="description_professionel" ColumnName="description_professionel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="speeches">
+            <EntityTypeMapping TypeName="MunicipalModel.speech">
+              <MappingFragment StoreEntitySet="speech">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="description_speech" ColumnName="description_speech" />
+                <ScalarProperty Name="date_speech" ColumnName="date_speech" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="visitings">
+            <EntityTypeMapping TypeName="MunicipalModel.visiting">
+              <MappingFragment StoreEntitySet="visiting">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="description_visiting" ColumnName="description_visiting" />
+                <ScalarProperty Name="date_visiting" ColumnName="date_visiting" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="publishers">
+            <EntityTypeMapping TypeName="MunicipalModel.publisher">
+              <MappingFragment StoreEntitySet="publisher">
+                <ScalarProperty Name="limit" ColumnName="limit" />
+                <ScalarProperty Name="type_pub" ColumnName="type_pub" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="to_dates" ColumnName="to_dates" />
+                <ScalarProperty Name="from_date" ColumnName="from_date" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
